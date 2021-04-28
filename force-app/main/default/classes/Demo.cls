@@ -3,6 +3,7 @@ public with sharing class Demo {
  // THIS IS COMMENT
  // THIS IS COMMENT
   // THIS IS COMMENT
+  // THIS IS COMMENT
 
     }
     public String getName() {
