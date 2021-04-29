@@ -14,7 +14,7 @@ public with sharing class Demo {
 
 
 
-        Demo1 demo1 = new Demo1();
+        Demo1 demo2 = new Demo1();
        return demo1.getName();
     }
 }
