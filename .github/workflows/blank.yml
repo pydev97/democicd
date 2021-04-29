@@ -1,9 +1,10 @@
 # ten workflow
 name:
   Demo Ci
-  on:
+on:
   push:
-    -develop
+    branches:
+      -develop
 
 # định nghĩa job
 jobs:
