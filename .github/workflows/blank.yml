@@ -1,0 +1,20 @@
+# ten workflow
+name:
+  Demo Ci
+  # ten cua event mà workflow sẽ trigger
+on:
+  push:
+    -develop
+
+# định nghĩa job
+jobs:
+  # id của job
+  deploy_source:
+    # tên của job
+    name: deploy_source
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: sfdx-actions/setup-sfdx@v1
+      - name: convert_source_format
+        run: sfdx force:source:convert --sourcepath=force-app\main\default\classes  --outputdir=convert
