@@ -15,7 +15,6 @@ jobs:
           sudo npm install sfdx-git-delta
           git config remote.origin.fetch '+refs/head/*:refs/remote/origin/*'
           git fetch --all
-          git checkout -b develop
           git --no-pager diff --name-status develop origin/develop
           sgd --to develop --from origin/develop --repo --output .
           cat package/package.xml
