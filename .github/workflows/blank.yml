@@ -18,5 +18,3 @@ jobs:
         uses: actions/checkout@v2
       - name: 'install salesforce cli'
         uses: sfdx-actions/setup-sfdx@v1
-      - name: convert_source_format
-        run: sfdx force:source:convert --sourcepath=force-app\main\default\classes  --outputdir=convert
