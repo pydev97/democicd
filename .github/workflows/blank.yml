@@ -14,7 +14,9 @@ jobs:
     name: deploy_source
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: sfdx-actions/setup-sfdx@v1
+      - name: 'checkout source code'
+        uses: actions/checkout@v2
+      - name: 'install salesforce cli'
+        uses: sfdx-actions/setup-sfdx@v1
       - name: convert_source_format
         run: sfdx force:source:convert --sourcepath=force-app\main\default\classes  --outputdir=convert
