@@ -10,19 +10,7 @@ jobs:
         uses: sfdx-actions/setup-sfdx@v1
         with:
           sfdx-auth-url: ${{ secrets.Dm }}
-      - run: pwd
       - name: convert_source_format
         run: sfdx force:source:convert --sourcepath=force-app/main/default/classes  --outputdir=convert
-      - run: cat convert/package.xml
-      - run: ls
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} evnt."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: deploy source to org 
+        run: sfdx force:mdapi:deploy -d convert/package.xml 
