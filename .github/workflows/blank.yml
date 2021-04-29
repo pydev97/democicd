@@ -10,6 +10,8 @@ jobs:
         uses: sfdx-actions/setup-sfdx@v1
       - name: convert_source_format
         run: sfdx force:source:convert --sourcepath=force-app/main/default/classes  --outputdir=convert
+      - run: cd convert
+      - run: ls
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
