@@ -15,6 +15,7 @@ jobs:
           sudo npm install sfdx-git-delta -g
           git --no-pager diff --name-status develop origin/develop
           sgd --to develop --from origin/develop --repo . --output .
+          cat package/package.xml
 #       - name: convert_source_format
 #         run: sfdx force:source:convert --sourcepath=force-app/main/default/lwc  --outputdir=convert
 #       - name: deploy source to org 
