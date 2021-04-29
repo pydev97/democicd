@@ -9,7 +9,7 @@ jobs:
       - name: 'install salesforce cli'
         uses: sfdx-actions/setup-sfdx@v1
         with:
-          sfdx-auth-url: ${{ secrets.dm }}
+          sfdx-auth-url: ${{ secrets.Dm }}
       - run: pwd
       - name: convert_source_format
         run: sfdx force:source:convert --sourcepath=force-app/main/default/classes  --outputdir=convert
