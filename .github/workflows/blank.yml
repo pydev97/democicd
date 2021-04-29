@@ -13,8 +13,8 @@ jobs:
       - name: install delta app
         run: |
           sfdx plugins:install sfdx-git-delta
-          git config remote.origin.fetch '+refs/head/*:refs/remote/origin/*'
           git fetch --all
+          git branch
           sfdx sgd:source:delta --to HEAD --from HEAD^ --output .
           ls
 
