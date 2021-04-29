@@ -12,10 +12,9 @@ jobs:
           sfdx-auth-url: ${{ secrets.Dm }}
       - name: install delta app
         run: |
-          sfdx plugins:install sfdx-git-delta
-          git fetch --all
+          sudo npm install sfdx-git-delta@lastest -g
           git switch develop
-          sfdx sgd:source:delta --to HEAD --from HEAD^ --output .
+          sgd --to develop --from origin/develop --repo . --output .
           ls
 
       - name: convert_source_format
