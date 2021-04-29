@@ -16,7 +16,7 @@ jobs:
           git config remote.origin.fetch '+refs/head/*:refs/remote/origin/*'
           git fetch --all
           sfdx sgd:source:delta --to HEAD --from HEAD^ --output .
-          cat package/package.xml
+          ls
 
       - name: convert_source_format
         run: sfdx force:source:convert --sourcepath=force-app/main/default/lwc  --outputdir=convert
