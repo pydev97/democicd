@@ -11,6 +11,6 @@ jobs:
         with:
           sfdx-auth-url: ${{ secrets.Dm }}
       - name: convert_source_format
-        run: sfdx force:source:convert --sourcepath=force-app/main/default/classes  --outputdir=convert
+        run: sfdx force:source:convert --sourcepath=force-app/main/default/lwc  --outputdir=convert
       - name: deploy source to org 
-        run: sfdx force:mdapi:deploy -d convert/package.xml 
+        run: sfdx force:source:deploy -x convert/package.xml 
