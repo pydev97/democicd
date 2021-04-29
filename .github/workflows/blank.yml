@@ -15,8 +15,7 @@ jobs:
           sfdx plugins:install sfdx-git-delta
           git config remote.origin.fetch '+refs/head/*:refs/remote/origin/*'
           git fetch --all
-          git --no-pager diff --name-status develop origin/develop
-          sfdx sgd:source:delta --to develop --from origin/develop --output .
+          sfdx sgd:source:delta --to HEAD --from HEAD^ --output .
           cat package/package.xml
 
       - name: convert_source_format
