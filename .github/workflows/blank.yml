@@ -14,7 +14,7 @@ jobs:
         run: |
           sfdx plugins:install sfdx-git-delta
           git fetch --all
-          git branch
+          git switch develop
           sfdx sgd:source:delta --to HEAD --from HEAD^ --output .
           ls
 
