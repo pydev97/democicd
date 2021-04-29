@@ -1,8 +1,7 @@
 # ten workflow
 name:
   Demo Ci
-  # ten cua event mà workflow sẽ trigger
-on:
+  on:
   push:
     -develop
 
