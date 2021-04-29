@@ -13,6 +13,7 @@ jobs:
       - name: install delta app
         run: |
           sfdx plugins:install sfdx-git-delta
+          y
 #       - name: convert_source_format
 #         run: sfdx force:source:convert --sourcepath=force-app/main/default/lwc  --outputdir=convert
 #       - name: deploy source to org 
