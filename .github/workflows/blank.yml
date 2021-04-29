@@ -13,6 +13,8 @@ jobs:
       - name: install delta app
         run: |
           sudo npm install sfdx-git-delta -g
+          git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+          git fetch --all
           git --no-pager diff --name-status develop origin/develop
           sgd --to develop --from origin/develop --repo . --output .
           cat package/package.xml
