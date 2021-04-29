@@ -12,7 +12,8 @@ jobs:
           sfdx-auth-url: ${{ secrets.Dm }}
       - name: install delta app
         run: |
-          sudo npm install sfdx-git-delta
+          sudo npm install sfdx-git-delta -g
+          git --no-pager diff --name-status develop origin/develop
           sgd --to develop --from origin/develop --repo . --output .
 #       - name: convert_source_format
 #         run: sfdx force:source:convert --sourcepath=force-app/main/default/lwc  --outputdir=convert
