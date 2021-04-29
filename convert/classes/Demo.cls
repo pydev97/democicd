@@ -7,7 +7,6 @@ public with sharing class Demo {
 
     }
     public String getName() {
-        // comment
         Demo1 demo1 = new Demo1();
         // THIS IS COMMENT
           // THIS IS COMMENT
